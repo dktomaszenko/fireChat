@@ -37,3 +37,6 @@ npm install -g typescript
 npm install firebase angularfire2 --save
 ```
 
+##  Último video
+
+185

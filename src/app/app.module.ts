@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import {config} from '../environments/firebase.config';
 import { ChatComponent } from './components/chat/chat.component';
+import {ChatService} from './services/chat.service';
 
 
 @NgModule({
@@ -20,7 +21,9 @@ import { ChatComponent } from './components/chat/chat.component';
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [
+    ChatService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
