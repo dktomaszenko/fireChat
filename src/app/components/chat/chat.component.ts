@@ -25,8 +25,8 @@ export class ChatComponent implements OnInit {
       return;
     }
     this._cs.agregarMensaje(this.mensaje)
-      .then( ()=>{
-
+      .then( (data)=>{
+        console.log(data);
       })
       .catch( ()=>{
 
