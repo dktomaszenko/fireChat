@@ -1,7 +1,16 @@
+<!--
 <div class="container">
   <ul>
     <li *ngFor="let chat of chats | async">
       {{ chat | json }}
     </li>
   </ul>
+</div>
+-->
+<div class="container main-container">
+  <h1>FireChat</h1>
+  <hr>
+  <div class="chat-window">
+    <app-chat></app-chat>
+  </div>
 </div>
