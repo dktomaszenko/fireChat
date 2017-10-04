@@ -5,10 +5,20 @@ import {Mensaje} from "../interfaces/mensaje";
 @Injectable()
 export class ChatService {
 
-  chats: FirebaseListObservable<any[]>;
-
+  chats: FirebaseListObservable<Mensaje[]>;
+  usuario: any = {
+    nombre: 'Darek'
+  };
+  CREDENCIAL = {
+    'email': 'dktomaszenko@gmail.com',
+    'pass': 'xjxxwbm9fx'
+  };
+  ERROR = {
+    'code': null,
+    'message': 'null'
+  };
   constructor(private db: AngularFireDatabase) {
-    /*this.chats = db.list('/chats');*/
+
   }
 
   cargarMensajes(){
@@ -29,6 +39,11 @@ export class ChatService {
 
     return this.chats.push( mensaje );
 
+  }
+
+
+  logout(){
+    this.db.app.auth().signOut();
   }
 
 }

@@ -13,7 +13,11 @@ export class ChatComponent implements OnInit {
     private _cs: ChatService
   ) {
     this._cs.cargarMensajes().subscribe( ()=>{
-      console.log('mensajes cargados');
+      setTimeout(()=>{
+        const mainDiv = document.getElementById('mainDIV');
+        mainDiv.scrollTop = mainDiv.scrollHeight;
+      }, 50);
+
     })
   }
 
@@ -30,7 +34,9 @@ export class ChatComponent implements OnInit {
       })
       .catch( ()=>{
 
-      })
+      });
+
+    this.mensaje = '';
 
   }
 
